@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.navigationbar.fragments.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/navigation_notifications" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.navigationbar.fragments.DashBoardFragment"
+        tools:layout="@layout/fragment_dashboard"
+        android:label="DashBoard" />
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.navigationbar.fragments.NotificationFragment"
+        tools:layout="@layout/fragment_notification"
+        android:label="Notification" >
+        <argument
+            android:name="amount"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/myFragment"
+        android:name="com.example.navigationbar.fragments.MyFragment"
+        android:label="MyFragment"
+        tools:layout="@layout/fragment_myfragment"/>
+</navigation>
